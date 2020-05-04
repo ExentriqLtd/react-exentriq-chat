@@ -1,0 +1,39 @@
+{
+  "name": "exentriq-chat",
+  "version": "0.0.1",
+  "description": "Chat Service for connecting to backend",
+  "main": "index.js",
+  "scripts": {
+    "test:eslint": "eslint --ext .ts,.tsx ./",
+    "test:lint": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bitrocket.dev",
+  "keywords": [
+    "exentriq",
+    "exentriq-chat",
+    "service-chat"
+  ],
+  "repository": {
+    "url": "https://github.com/bitRocket-dev/exentriq-chat"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.4",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run test:eslint && yarn run test:lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "exentriq-utils": "1.1.17",
+    "rocket-socket": "^0.0.1"
+  }
+}
